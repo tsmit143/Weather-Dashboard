@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <header>
+        <h1 class="title is-1 level-right has-background-info has-text-white">Weather Dashboard</h1>
+    </header>
+
+    <!--Search Area-->
+    <aside class="container">
+        <h2>Search For A City:</h2>
+        <!--Search Input-->
+        <input id="search-bar" class="input" type="text" placeholder="Enter City">
+        <!--State Input-->
+        <input id="statesearch-bar" class="input" type="text" placeholder="Enter State">
+         <!--Country Input-->
+         <input id="countrysearch-bar" class="input" type="text" placeholder="Enter Country Code">
+        <!--Search Button-->
+        <button id="search-button" class = "button" >Search</button>
+    </aside>
+
+    <section>
+         <!--Search History List-->
+        <ul>
+            <li id = "search-list" ></li>
+        </ul>
+        
+    </section>
+
+    <!--Current Day's Weather-->
+    <section class="container">
+        <p id = "currentDay" class="forecast"></p>
+    </section>
+    <!--5 Day Weather Forecast-->
+    <section >
+        <h2>5 Day Weather Forecast</h2>
+        <ul class="card" >
+            <li id = "day1" class="forecast">hello</li>
+            <li id = "day2" class="forecast"></li>
+            <li id = "day3" class="forecast"></li>
+            <li id = "day4" class="forecast"></li>
+            <li id = "day5" class="forecast"></li>
+        </ul>
+
+    </section>
+    
+
+    <script src="./script.js"></script>
+</body>
+</html>
