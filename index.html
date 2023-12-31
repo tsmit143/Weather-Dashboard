@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
     <!--Link Bulma Style Sheet-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <!--Link Day Js-->
@@ -25,8 +26,8 @@
     </header>
 
     <!--Search Area-->
-    <aside class="container">
-        <h2>Search For A City:</h2>
+    <aside class="box">
+        <h2 class="title is-4">Search For A City:</h2>
         <!--Search Input-->
         <input id="search-bar" class="input" type="text" placeholder="Enter City">
         <!--State Input-->
@@ -34,13 +35,12 @@
          <!--Country Input-->
          <input id="countrysearch-bar" class="input" type="text" placeholder="Enter Country Code">
         <!--Search Button-->
-        <button id="search-button" class = "button" >Search</button>
+        <button id="search-button" class = "button is-info" >Search</button>
     </aside>
 
-    <section>
+    <section class="box">
          <!--Search History List-->
-        <ul>
-            <li id = "search-list" ></li>
+        <ul id= "search-list" >
         </ul>
         
     </section>

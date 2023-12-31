@@ -3,9 +3,8 @@ var stateInput = document.getElementById('statesearch-bar');
 var cityInput = document.getElementById('search-bar');
 var countryInput = document.getElementById('countrysearch-bar');
 var searchBtn = document.getElementById("search-button");
-var historyList = document.getElementById('search-list');
+var searchList = document.getElementById('search-list');
 var currentDay = document.getElementById('currentDay');
-
 //when button is clicked function for city search commences and then is saved in the history list
 
 function displayWeather (){
@@ -14,11 +13,11 @@ function displayWeather (){
 
     fetch(requestUrl)
     .then (function(response){
-        console.log(response);
+       // console.log(response);
         return response.json();
     })
     .then(function (data){
-        console.log(data);
+       // console.log(data);
         //date
         
         var today = dayjs();
@@ -45,11 +44,46 @@ function displayWeather (){
 
         humidity.textContent = "Humidity: " +data.main.humidity +"%";
     })
-    
+    displayForecast();
+    saveSearch();
 };
-
 //search button
 searchBtn.addEventListener('click', displayWeather);
+
+//add to displaywether after complete
+function displayForecast (){
+var limit = 1;
+var requestUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" +cityInput.value+","+stateInput.value+","+countryInput.value+"&limit="+limit+"&appid="+apiKey;
+
+fetch(requestUrl)
+.then (function(response){
+    return response.json();
+})
+.then (function (data){
+   // console.log(data);
+
+    var lat = data.lat;
+    var lon = data.lon;
+
+    var requestUrl2 = "api.openweathermap.org/data/2.5/forecast?lat="+lat +"&lon="+lon+"&appid="+apiKey;
+});
+
+
+
+}
+//show city searches****
+function saveSearch(){
+event.preventDefault();
+var city = cityInput.value;
+localStorage.setItem('city',JSON.stringify(city));
+};
+
+function printSavedSearch(){
+var lastSearch = JSON.parse(localStorage.getItem('city'));
+if (lastSearch !=- null){
+    
+}
+};
 
 //city search is added to an array
     //city is saved to local storage
