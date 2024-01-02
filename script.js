@@ -56,19 +56,19 @@ fetch(requestUrl)
     return response.json();
 })
 .then (function (data){
-   // console.log(data);
+    // console.log(data);
 
     var lat = data[0].lat;
     var lon = data[0].lon;
- //   console.log(lat);
-   // console.log(lon);
+    //console.log(lat);
+    // console.log(lon);
     var requestUrl2 = "http://api.openweathermap.org/data/2.5/forecast?lat="+lat +"&lon="+lon+"&appid="+apiKey+"&units=imperial";
 
     //receieve 5 day forcast 
 
     fetch(requestUrl2)
     .then(function(response){
-    return response.json();
+        return response.json();
     })
     .then (function(data2){
     //console.log(data2);
@@ -80,21 +80,27 @@ fetch(requestUrl)
         var forecastDate = forecastList.appendChild(document.createElement('li'));
         console.log(`Date: ${dayjs(filteredList[i].dt_txt).format('MM/DD/YYYY')}`);
         forecastDate.textContent = `Date: ${dayjs(filteredList[i].dt_txt).format('MM/DD/YYYY')}`;
+
         //icon
         var forecastIcon = forecastList.appendChild(document.createElement('li'));
         console. log(`Icon: https://openweathermap.org/img/wn/${filteredList[i].weather[0].icon}@2x.png`);
         var iconUrl = `https://openweathermap.org/img/wn/${filteredList[i].weather[0].icon}@2x.png`;
         forecastIcon.innerHTML = `Icon: <img scr=${iconUrl} alt=${filteredList[i].weather[0].description}>`;
+
         //temp
         var forecastTemp = forecastList.appendChild(document.createElement('li'));
-        console.log(`${filteredList[i].main.temp}`);
-        forecastTemp.textcontent = `${filteredList[i].main.temp}`;
+        console.log(`Temp: ${filteredList[i].main.temp}`);
+        forecastTemp.textContent = `Temp: ${filteredList[i].main.temp}`;
+
         //wind
         var forecastWind = forecastList.appendChild(document.createElement('li'));
-        forecastWind.textcontent = `Wind Speed: ${filteredList[i].wind.speed} mph`;
+        console.log(`Wind Speed: ${filteredList[i].wind.speed} mph`);
+        forecastWind.textContent = `Wind Speed: ${filteredList[i].wind.speed} mph`;
+
         //humidity
         var forecastHumid = forecastList.appendChild(document.createElement('li'));
-        forecastHumid.textcontent = `Humidity: ${filteredList[i].main.humi} mph`;
+        console.log(`Humidity: ${filteredList[i].main.humi} mph`);
+        forecastHumid.textContent = `Humidity: ${filteredList[i].main.humidity} mph`;
     }
     })
 });
