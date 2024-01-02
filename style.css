@@ -2,3 +2,6 @@
 border-bottom: solid rgb(103, 130, 212);
 width: 25%
 }
+.container{
+    border: solid rgb(103, 130, 212);
+}
