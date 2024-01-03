@@ -9,6 +9,6 @@ I WANT to see the weather outlook for multiple cities
 SO THAT I can plan a trip accordingly
 # Deployment
 Click [here] (https://tsmit143.github.io/Weather-Dashboard/)
-[!Screenshot](./Assets/Images/Screenshot%202024-01-02%20at%2010.10.13%20PM.png)
+![Screenshot](./Assets/Images/Screenshot%202024-01-02%20at%2010.10.13%20PM.png)
 # License
 https://choosealicense.com/licenses/mit/
